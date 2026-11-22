@@ -3,6 +3,7 @@ package ie.atu.sample.controller;
 import ie.atu.sample.dto.CreateBookingRequest;
 import ie.atu.sample.model.Booking;
 import ie.atu.sample.service.BookingService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ public class BookingController {
     }
 
     @PostMapping
-    public ResponseEntity<Booking> createBooking(@RequestBody CreateBookingRequest request) {
+    public ResponseEntity<Booking> createBooking(@Valid @RequestBody CreateBookingRequest request) {
 
         Booking booking = bookingService.createBooking(request);
 

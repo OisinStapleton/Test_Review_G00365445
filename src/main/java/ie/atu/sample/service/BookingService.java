@@ -31,7 +31,7 @@ public class BookingService {
         Booking booking = new Booking();
         booking.setOrganiserName(request.organiserName());
         booking.setRoomId(request.roomId());
-        booking.setAttendeeCount(room.getCapacity());
+        booking.setAttendeeCount(request.attendeeCount());
         booking.setStatus("ACTIVE");
         return bookingRepository.save(booking);
     }
